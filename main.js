@@ -1,12 +1,3 @@
-/* Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
-Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
-MILESTONE 2:
-Stampare le stesse informazioni su DOM sottoforma di stringhe
-BONUS 1:
-Trasformare la stringa foto in una immagine effettiva
-BONUS 2:
-Organizzare i singoli membri in card/schede */
-
 
 const outputHTML= document.getElementById("output")
 
@@ -69,4 +60,26 @@ function stringaOut(object){
     stampa += "<br>"
     console.log(stampa)
     return stampa
+}
+
+//BONUS 1
+
+const bonusHTML= document.getElementById("outputBonus")
+
+// cicliamo per ogni elemento dell'array una specifica stampa
+for( let i = 0; i < team.length; i++ ){
+
+    bonusHTML.innerHTML += `
+            <div class="card col-3 offset-1">
+                <img class="card-img-top" src='./img/${team[i].Foto}' alt="fotoTeam"/>
+                <div class="card-body">
+                    <h4 class="card-title">
+                    ${team[i].Nome}
+                    </h4>
+                    <p class="card-text">
+                    ${team[i].Ruolo}
+                    </p>
+                </div>
+            </div>
+        `
 }
